@@ -76,7 +76,7 @@ jobs:
                 run: conan create . curaengine/5.0.1@Aurelius-Nero/main --build=missing --update
 
             -   name: create conan materials package (powershell)
-                working-directory: fdm_materials5
+                working-directory: fdm_materials
                 run: conan create . fdm_materials/5.0.1@Aurelius-Nero/master --build=missing --update
 
             -   name: create conan package (bash)
