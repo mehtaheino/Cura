@@ -6,7 +6,7 @@ on:
         inputs:
             cura_conan_version:
                 description: 'Cura Conan Version'
-                default: 'cura/5.0.0@rapidia/testing'
+                default: 'cura/5.4.0@Aurelius-Nero/main'
                 required: true
                 type: string
             Build_for_windows:
