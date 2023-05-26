@@ -126,20 +126,3 @@ jobs:
                         dist/*.exe
                         dist/*.asc
                     retention-days: 5
-
-Footer
-© 2023 GitHub, Inc.
-Footer navigation
-
-    [Terms](https://docs.github.com/site-policy/github-terms/github-terms-of-service)
-    [Privacy](https://docs.github.com/site-policy/privacy-policies/github-privacy-statement)
-    [Security](https://github.com/security)
-    [Status](https://www.githubstatus.com/)
-    [Docs](https://docs.github.com/)
-    [Contact GitHub](https://support.github.com/?tags=dotcom-footer)
-    [Pricing](https://github.com/pricing)
-    [API](https://docs.github.com/)
-    [Training](https://services.github.com/)
-    [Blog](https://github.blog/)
-    [About](https://github.com/about)
-    ```
