@@ -40,7 +40,7 @@ jobs:
                 with:
                     repository: Aurelius-Nero/CuraEngine
                     token: ${{ secrets.TOKEN_GITHUB }}
-                    path: curaEngine
+                    path: CuraEngine
 
             -   name: Checkout materials
                 uses: actions/checkout@v3
