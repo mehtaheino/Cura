@@ -1,0 +1,46 @@
+{
+    "version": 2,
+    "name": "MANU E1 - FDM/FFF 3D Printer",
+    "inherits": "fdmprinter",
+    
+    "metadata": 
+    {
+       "visible": true,
+       "author": "MehtaHeino",
+       "manufacturer": "MehtaHeino",
+       "file_formats": "text/RepRap",
+       "has_materials": true,
+       "has_variants": false,
+       "has_machine_materials": true,
+       "platform_offset": [0,0,0],
+       
+       "machine_extruder_trains":
+       {
+         "0": "manu_easy_3d_v1_extruder_0"   
+       }
+    },
+    
+
+    
+    
+  
+  "overrides": 
+  {
+     "gantry_height": {"value": "210"},
+     "machine_center_is_zero": {"default_value": false},
+     "machine_depth": {"default_value": 155},
+     "machine_height": {"default_value": 210},
+     "machine_width": {"default_value": 250},
+     "machine_extruder_count": {"default_value": 1},
+     "machine_gcode_flavor": {"default_value": "RepRap"},
+     
+     "machine_start_gcode": {"default_value": "M566 X300.00 Y300.00 Z120.00 E3000.00\nM203 X6000.00 Y6000.00 Z900.00 E6000.00\nM201 X500.00 Y500.00 Z20.00 E9000.00\nM572 D0 S0.04\nM400\nG1 Z10 F1200\nG1 X20 Y165 F6000\nG1 Z0.2 F1200\nG91\nG1 E10.0 F300\nM400\nG90\nG92 E0\nG4 S1\nG1 Y140.0 E1 F900"},
+     
+     "machine_end_gcode": {"default_value": "G28 Z0\nG91\nG1 E-2.0 F120\nM400\nG90\nG92 E0\nG28\nM104 S0\nM140 S0\nG90\nM18 X Z E0\nG1 Y145 F3000\nG92 E0\nM107\nM18 Y"}
+     
+   }
+   
+ }
+  
+    
+    

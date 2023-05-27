@@ -139,7 +139,7 @@ jobs:
                 shell: python
                 run: |
                     import os
-                    installer_filename = f"Aurelius-Cura-{os.getenv('CURA_VERSION_FULL')}-${{ inputs.os_name }}"
+                    installer_filename = f"MehtaHeino-Cura-{os.getenv('CURA_VERSION_FULL')}-${{ inputs.os_name }}"
                     if "${{ runner.os }}" == "Windows":
                         installer_ext = "msi" if "${{ inputs.msi_installer }}" == "true" else "exe"
                     elif "${{ runner.os }}" == "macOS":
