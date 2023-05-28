@@ -89,11 +89,11 @@ jobs:
 
             -   name: Install the Packages (Powershell)
                 if: ${{ runner.os == 'Windows' }}
-                run: conan install $Env:CURA_CONAN_VERSION --build=missing --update -if cura_inst -g VirtualPythonEnv --json "cura_inst/conan_install_info.json"
+                run: conan install $Env:CURA_CONAN_VERSION --build=missing --update -if cura_inst -g VirtualPythonEnv --json "cura_inst/conan_install_info.json" --require-override=fdm_materials/5.0.1@Aurelius-Nero/master
 
             -   name: Create the Packages (Bash)
                 if: ${{ runner.os != 'Windows' }}
-                run: conan install $CURA_CONAN_VERSION --build=missing --update -if cura_inst -g VirtualPythonEnv --json "cura_inst/conan_install_info.json"
+                run: conan install $CURA_CONAN_VERSION --build=missing --update -if cura_inst -g VirtualPythonEnv --json "cura_inst/conan_install_info.json" --require-override=fdm_materials/5.0.1@Aurelius-Nero/master
 
             -   name: Set Environment variables for Cura (bash)
                 if: ${{ runner.os != 'Windows' }}
