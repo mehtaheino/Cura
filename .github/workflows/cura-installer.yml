@@ -26,6 +26,23 @@ on:
 env:
     CURA_CONAN_VERSION: ${{ inputs.cura_conan_version }}
     TOKEN_GITHUB: ${{ secrets.GITHUB_TOKEN }}
+    MAC_NOTARIZE_USER: ${{ secrets.MAC_NOTARIZE_USER }}
+    MAC_NOTARIZE_PASS: ${{ secrets.MAC_NOTARIZE_PASS }}
+    MACOS_CERT_P12: ${{ secrets.MACOS_CERT_P12 }}
+    MACOS_CERT_INSTALLER_P12: ${{ secrets.MACOS_CERT_INSTALLER_P12 }}
+    MACOS_CERT_USER: ${{ secrets.MACOS_CERT_USER }}
+    MACOS_CERT_PASSPHRASE: ${{ secrets.MACOS_CERT_PASSPHRASE }}
+
+
+
+
+
+
+
+
+
+
+
 
 jobs:
     cura-installer-create:
