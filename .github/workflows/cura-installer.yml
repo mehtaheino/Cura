@@ -18,7 +18,7 @@ on:
                 description: 'Cura Conan Version'
                 # must match format cura/[0-9].[0-9].[0-9]@whatever
                 # and the version numbers must match the version number in the first line of the conandata.yml file
-                default: 'cura/5.4.0@Aurelius-Nero/main'
+                default: 'cura/5.4.0@mehtaheino/main'
                 required: true
                 type: string
 
@@ -55,14 +55,14 @@ jobs:
             -   name: Checkout engine
                 uses: actions/checkout@v3
                 with:
-                    repository: Aurelius-Nero/CuraEngine
+                    repository: mehtaheino/CuraEngine
                     token: ${{ secrets.GITHUB_TOKEN }}
                     path: CuraEngine
 
             -   name: Checkout materials
                 uses: actions/checkout@v3
                 with:
-                    repository: Aurelius-Nero/fdm_materials
+                    repository: mehtaheino/fdm_materials
                     token: ${{ secrets.GITHUB_TOKEN }}
                     path: fdm_materials
 
@@ -74,7 +74,7 @@ jobs:
                     cache-dependency-path: .github/workflows/requirements-conan-package.txt
 
             -   name: Install Python requirements for runner
-                run: pip install -r https://raw.githubusercontent.com/Aurelius-Nero/Cura/main/.github/workflows/requirements-conan-package.txt
+                run: pip install -r https://raw.githubusercontent.com/mehtaheino/Cura/main/.github/workflows/requirements-conan-package.txt
                 #  Note the runner requirements are always installed from the main branch in the Ultimaker/Cura repo
 
             -   name: Install MacOS system requirements
@@ -90,11 +90,11 @@ jobs:
 
             -   name: create conan Engine package (powershell)
                 working-directory: CuraEngine
-                run: conan create . curaengine/5.0.1@Aurelius-Nero/main --build=missing --update
+                run: conan create . curaengine/5.0.1@mehtaheino/main --build=missing --update
 
             -   name: create conan materials package (powershell)
                 working-directory: fdm_materials
-                run: conan create . fdm_materials/5.0.1@Aurelius-Nero/master --build=missing --update
+                run: conan create . fdm_materials/5.0.1@mehtaheino/master --build=missing --update
 
             -   name: create conan package (bash)
                 if: ${{ runner.os != 'Windows' }}
