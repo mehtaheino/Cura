@@ -12,6 +12,7 @@
        "has_materials": true,
        "has_variants": false,
        "has_machine_materials": true,
+       "platform": "Mehtaheino_platform.stl",
        "platform_offset": [0,0,0],
        
        "machine_extruder_trains":
