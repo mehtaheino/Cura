@@ -21,6 +21,7 @@ on:
                 type: boolean
 
 jobs:
+#Windows exe
     windows-installer-create-exe:
         if: ${{ inputs.Build_for_windows }}
         uses: ./.github/workflows/cura-installer.yml
@@ -29,12 +30,22 @@ jobs:
             os_name: 'win64'
             cura_conan_version: ${{ inputs.cura_conan_version }}
         secrets: inherit
-
+#MacOS DMG
     mac-installer-create-exe:
         if: ${{ inputs.Build_for_mac }}
         uses: ./.github/workflows/cura-installer.yml
         with:
             platform: 'macos-11'
             os_name: 'mac'
+            cura_conan_version: ${{ inputs.cura_conan_version }}
+        secrets: inherit
+        
+#Linux installer        
+    linux-installer-create:
+        if: ${{ inputs.build_linux }}
+        uses: ./.github/workflows/cura-installer.yml
+        with:
+            platform: 'ubuntu-20.04'
+            os_name: 'linux'
             cura_conan_version: ${{ inputs.cura_conan_version }}
         secrets: inherit
