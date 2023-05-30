@@ -19,6 +19,11 @@ on:
                 default: false
                 required: true
                 type: boolean
+            build_linux:
+                description: 'Build for Linux'
+                default: false
+                required: true
+                type: boolean
 
 jobs:
 #Windows exe
