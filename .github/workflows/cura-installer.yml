@@ -33,6 +33,7 @@ env:
     MACOS_CERT_USER: ${{ secrets.MACOS_CERT_USER }}
     MACOS_CERT_PASSPHRASE: ${{ secrets.MACOS_CERT_PASSPHRASE }}
     GPG_PRIVATE_KEY: ${{ secrets.GPG_PRIVATE_KEY }}
+    CODESIGN_IDENTITY: ${{ secrets.CODESIGN_IDENTITY }}
 
 
 
