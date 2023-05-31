@@ -33,7 +33,7 @@
      "machine_height": {"default_value": 210},
      "machine_width": {"default_value": 250},
      "machine_extruder_count": {"default_value": 1},
-     "machine_gcode_flavor": {"default_value": "RepRap"},
+     "machine_gcode_flavor": {"default_value": "RepRap (RepRap)"},
      
      "machine_start_gcode": {"default_value": "M566 X300.00 Y300.00 Z120.00 E3000.00\nM203 X6000.00 Y6000.00 Z900.00 E6000.00\nM201 X500.00 Y500.00 Z20.00 E9000.00\nM572 D0 S0.04\nM400\nG1 Z10 F1200\nG1 X20 Y165 F6000\nG1 Z0.2 F1200\nG91\nG1 E10.0 F300\nM400\nG90\nG92 E0\nG4 S1\nG1 Y140.0 E1 F900"},
      
