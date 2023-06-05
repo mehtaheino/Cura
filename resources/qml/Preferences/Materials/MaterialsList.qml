@@ -135,21 +135,21 @@ Item
         width: materialList.width
         height: childrenRect.height
 
-        MaterialsBrandSection
-        {
-            id: favoriteSection
-            sectionName: "Favorites"
-            elementsModel: favoriteMaterialsModel
-            hasMaterialTypes: false
-        }
+        //MaterialsBrandSection
+        //{
+        //    id: favoriteSection
+        //    sectionName: "Favorites"
+        //    elementsModel: favoriteMaterialsModel
+        //    hasMaterialTypes: false
+        //}
 
-        MaterialsBrandSection
-        {
-            id: genericSection
-            sectionName: "Generic"
-            elementsModel: genericMaterialsModel
-            hasMaterialTypes: false
-        }
+        //MaterialsBrandSection
+        //{
+        //    id: genericSection
+        //    sectionName: "Generic"
+        //    elementsModel: genericMaterialsModel
+        //    hasMaterialTypes: false
+        //}
 
         Repeater
         {

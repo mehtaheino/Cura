@@ -17,60 +17,60 @@ Item
 
     property var goToUltimakerPrinter
 
-    DropDownWidget
-    {
-        id: addNetworkPrinterDropDown
+    //DropDownWidget
+    //{
+    //    id: addNetworkPrinterDropDown
 
-        anchors.top: parent.top
-        anchors.left: parent.left
-        anchors.right: parent.right
-        anchors.topMargin: UM.Theme.getSize("wide_margin").height
+    //    anchors.top: parent.top
+    //    anchors.left: parent.left
+    //    anchors.right: parent.right
+    //    anchors.topMargin: UM.Theme.getSize("wide_margin").height
 
-        title: catalog.i18nc("@label", "Add a networked printer")
-        contentShown: true  // by default expand the network printer list
+    //    title: catalog.i18nc("@label", "Add a networked printer")
+    //    contentShown: true  // by default expand the network printer list
 
-        onClicked:
-        {
-            addLocalPrinterDropDown.contentShown = !contentShown
-        }
+    //    onClicked:
+    //    {
+    //        addLocalPrinterDropDown.contentShown = !contentShown
+    //    }
 
-        contentComponent: networkPrinterListComponent
-        Component
-        {
-            id: networkPrinterListComponent
-            AddNetworkPrinterScrollView
-            {
-                id: networkPrinterScrollView
+    //    contentComponent: networkPrinterListComponent
+    //    Component
+    //    {
+    //        id: networkPrinterListComponent
+    //        AddNetworkPrinterScrollView
+    //        {
+    //            id: networkPrinterScrollView
 
-                maxItemCountAtOnce: 9  // show at max 9 items at once, otherwise you need to scroll.
+    //            maxItemCountAtOnce: 9  // show at max 9 items at once, otherwise you need to scroll.
 
-                onRefreshButtonClicked:
-                {
-                    UM.OutputDeviceManager.startDiscovery()
-                }
+    //            onRefreshButtonClicked:
+    //            {
+    //                UM.OutputDeviceManager.startDiscovery()
+    //            }
 
-                onAddByIpButtonClicked:
-                {
-                    base.goToPage("add_printer_by_ip")
-                }
+    //            onAddByIpButtonClicked:
+    //            {
+    //                base.goToPage("add_printer_by_ip")
+    //            }
 
-                onAddCloudPrinterButtonClicked:
-                {
-                    base.goToPage("add_cloud_printers")
-                    if (!Cura.API.account.isLoggedIn)
-                    {
-                        Cura.API.account.login()
-                    }
-                }
-            }
-        }
-    }
+    //            onAddCloudPrinterButtonClicked:
+    //            {
+    //                base.goToPage("add_cloud_printers")
+    //                if (!Cura.API.account.isLoggedIn)
+    //                {
+    //                    Cura.API.account.login()
+    //                }
+    //            }
+    //        }
+    //    }
+    //}
 
     DropDownWidget
     {
         id: addLocalPrinterDropDown
 
-        anchors.top: addNetworkPrinterDropDown.bottom
+        anchors.top: parent.top
         anchors.left: parent.left
         anchors.right: parent.right
         anchors.topMargin: UM.Theme.getSize("default_margin").height
@@ -79,7 +79,7 @@ Item
 
         onClicked:
         {
-            addNetworkPrinterDropDown.contentShown = !contentShown
+            //addNetworkPrinterDropDown.contentShown = !contentShown
         }
 
         contentComponent: localPrinterListComponent
@@ -94,13 +94,14 @@ Item
         }
     }
 
+
     Cura.SecondaryButton
     {
         id: backButton
         anchors.left: parent.left
         anchors.bottom: parent.bottom
-        text: catalog.i18nc("@button", "Add UltiMaker printer via Digital Factory")
-        onClicked: goToUltimakerPrinter()
+        text: catalog.i18nc("@button", "Prev")
+        onClicked: base.showPreviousPage()
     }
 
     Cura.PrimaryButton
@@ -111,11 +112,11 @@ Item
         enabled:
         {
             // If the network printer dropdown is expanded, make sure that there is a selected item
-            if (addNetworkPrinterDropDown.contentShown)
-            {
-                return addNetworkPrinterDropDown.contentItem.currentItem != null
-            }
-            else
+            //if (addNetworkPrinterDropDown.contentShown)
+            //{
+            //    return addNetworkPrinterDropDown.contentItem.currentItem != null
+            //}
+            //else
             {
                 // Printer name cannot be empty
                 const localPrinterItem = addLocalPrinterDropDown.contentItem.currentItem
@@ -128,16 +129,16 @@ Item
         onClicked:
         {
             // Create a network printer or a local printer according to the selection
-            if (addNetworkPrinterDropDown.contentShown)
-            {
+            //if (addNetworkPrinterDropDown.contentShown)
+            //{
                 // Create a network printer
-                const networkPrinterItem = addNetworkPrinterDropDown.contentItem.currentItem
-                CuraApplication.getDiscoveredPrintersModel().createMachineFromDiscoveredPrinter(networkPrinterItem)
+            //    const networkPrinterItem = addNetworkPrinterDropDown.contentItem.currentItem
+            //    CuraApplication.getDiscoveredPrintersModel().createMachineFromDiscoveredPrinter(networkPrinterItem)
 
                 // After the networked machine has been created, go to the next page
-                base.showNextPage()
-            }
-            else
+            //    base.showNextPage()
+            //}
+            //else
             {
                 // Create a local printer
                 const localPrinterItem = addLocalPrinterDropDown.contentItem.currentItem

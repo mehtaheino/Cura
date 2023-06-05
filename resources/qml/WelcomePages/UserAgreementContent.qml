@@ -36,10 +36,10 @@ Item
             right: parent.right
         }
 
-        text: "<p><b>Disclaimer by UltiMaker</b></p>"
+        text: "<p><b>Disclaimer by Mehta Heino</b></p>"
             + "<p>Please read this disclaimer carefully.</p>"
-            + "<p>Except when otherwise stated in writing, UltiMaker provides any UltiMaker software or third party software \"As is\" without warranty of any kind. The entire risk as to the quality and performance of UltiMaker software is with you.</p>"
-            + "<p>Unless required by applicable law or agreed to in writing, in no event will UltiMaker be liable to you for damages, including any general, special, incidental, or consequential damages arising out of the use or inability to use any UltiMaker software or third party software.</p>"
+            + "<p>Except when otherwise stated in writing, Mehta heino provides any Mehta Heino software or third party software \"As is\" without warranty of any kind. The entire risk as to the quality and performance of Mehta Heino software is with you.</p>"
+            + "<p>Unless required by applicable law or agreed to in writing, in no event will Mehta Heino be liable to you for damages, including any general, special, incidental, or consequential damages arising out of the use or inability to use any Mehta Heino software or third party software.</p>"
         textFormat: Text.RichText
         wrapMode: Text.WordWrap
         font: UM.Theme.getFont("medium")

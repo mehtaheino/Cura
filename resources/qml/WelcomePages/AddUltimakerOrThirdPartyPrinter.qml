@@ -26,14 +26,14 @@ Control
 
         UM.Label
         {
-            text: catalog.i18nc("@label", "In order to start using Cura you will need to configure a printer.")
+            text: catalog.i18nc("@label", "Please select the version of the MANU printer that you are using.")
             font: UM.Theme.getFont("default")
             Layout.alignment: Qt.AlignTop
         }
 
         UM.Label
         {
-            text: catalog.i18nc("@label", "What printer would you like to setup?")
+            text: catalog.i18nc("@label", "Which MANU printer would you like to setup?")
             font: UM.Theme.getFont("default_bold")
             Layout.alignment: Qt.AlignTop
         }
@@ -47,21 +47,21 @@ Control
             Layout.bottomMargin: UM.Theme.getSize("wide_margin").height
             Layout.alignment: Qt.AlignTop | Qt.AlignHCenter
 
-            PrinterCard
-            {
-                id: ultimakerPrinterCard
-                Layout.alignment: Qt.AlignBottom
-                onClicked: goToUltimakerPrinter
-                text: catalog.i18nc("@button", "UltiMaker printer")
-                imageSource: UM.Theme.getImage("ultimaker_printer")
-            }
+            //PrinterCard
+            //{
+            //    id: ultimakerPrinterCard
+            //    Layout.alignment: Qt.AlignBottom
+            //    onClicked: goToUltimakerPrinter
+            //    text: catalog.i18nc("@button", "UltiMaker printer")
+            //    imageSource: UM.Theme.getImage("ultimaker_printer")
+            //}
 
             PrinterCard
             {
                 id: thrirdPartyPrinterCard
                 Layout.alignment: Qt.AlignBottom
                 onClicked: goToThirdPartyPrinter
-                text: catalog.i18nc("@button", "Non UltiMaker printer")
+                text: catalog.i18nc("@button", "MANU 3D Printer")
                 imageSource: UM.Theme.getImage("third_party_printer")
             }
         }
